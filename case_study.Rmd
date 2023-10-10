@@ -54,6 +54,8 @@ nyc_airbnb = nyc_airbnb |>
   - Borough? Neighborhood?
   - Lat and long?
 
+## Attempt solutions
+
 ```{r}
 nyc_airbnb |>
   count(borough)
@@ -113,7 +115,7 @@ nyc_airbnb |>
   geom_density_ridges()
 ```
 
-## Attempt solutions
+
 
 
 

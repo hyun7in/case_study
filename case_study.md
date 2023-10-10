@@ -30,6 +30,8 @@ nyc_airbnb = nyc_airbnb |>
   - Borough? Neighborhood?
   - Lat and long?
 
+## Attempt solutions
+
 ``` r
 nyc_airbnb |>
   count(borough)
@@ -151,5 +153,3 @@ nyc_airbnb |>
     ## Picking joint bandwidth of 26.6
 
 <img src="case_study_files/figure-gfm/unnamed-chunk-9-1.png" width="90%" />
-
-## Attempt solutions
