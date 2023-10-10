@@ -1,6 +1,6 @@
 ---
 title: "Case Study"
-output: github_document
+output: html_document
 ---
 
 ```{r, include = FALSE, message = FALSE, warning = FALSE}
@@ -54,7 +54,7 @@ nyc_airbnb = nyc_airbnb |>
   - Borough? Neighborhood?
   - Lat and long?
 
-## Attempt solutions
+## Do some EDA
 
 ```{r}
 nyc_airbnb |>
@@ -115,7 +115,31 @@ nyc_airbnb |>
   geom_density_ridges()
 ```
 
+## Try to make a map
 
+```{r}
+nyc_airbnb |>
+  filter(
+    price < 1000,
+    room_type == "Entire home/apt",
+    borough == "Manhattan") |>
+  ggplot(aes(x = lat, y = long, color = price)) +
+  geom_point()
+```
+
+Try something else entirely.
+
+```{r}
+nyc_airbnb |>
+  filter(
+    price < 1000,
+    room_type == "Entire home/apt",
+    borough == "Manhattan") |>
+  sample_n(500) |>
+  leaflet() |>
+  addProviderTiles(providers$CartoDB.Positron) |>
+  addCircleMarkers(~lat, ~long, radius = .5)
+```
 
 
 
